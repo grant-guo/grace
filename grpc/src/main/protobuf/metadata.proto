@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package grant.analytics.grpc.protoc;
+
+option java_multiple_files = true;
+option java_outer_classname = "MetadataProto";
+
+message FileIDList {
+    repeated string file_id = 1;
+}
+
+
+message SampleMappingRequest {
+
+}
+
+message SampleMappingResponse {
+    map<string, FileIDList> mapping = 1;
+}
+
+service MetadataService {
+    rpc GetSampleMapping (SampleMappingRequest) returns (SampleMappingResponse);
+}
