@@ -1,0 +1,52 @@
+syntax = "proto2";
+
+package grant.analytics.common;
+
+message Document {
+    optional string a = 1;
+    required string b = 2;
+    required int32 c = 3;
+    repeated Page pages = 4;
+}
+
+message Page {
+    required string a = 1;
+    optional string b = 2;
+    optional int32 c = 3;
+    optional string d = 4;
+    required Header header = 10;
+    required Tail tail = 11;
+    repeated Paragragh paragraphs = 15;
+}
+
+message Header {
+    required string a = 1;
+    required string b = 2;
+    required string c = 3;
+    optional string d = 4;
+    optional string e = 5;
+    required string f = 6;
+    required string g = 7;
+}
+
+message Tail {
+    optional int32 a = 1;
+    optional string b = 2;
+    optional string c = 3;
+    required string d = 4;
+    required string e = 5;
+}
+
+message Paragragh {
+    optional string a = 1;
+    required string b = 2;
+    optional string c = 3;
+    optional int64 d = 4;
+    optional int32 e = 5;
+    repeated Sentence sentences = 6;
+}
+
+message Sentence {
+    optional string a = 1;
+    required int64 b = 2;
+}
