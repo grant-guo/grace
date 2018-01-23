@@ -1,5 +1,6 @@
 package grant.analytics.common.datasource
 
+import grant.analytics.common.model.Document
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.sources.{BaseRelation, DataSourceRegister, RelationProvider}
 
@@ -16,7 +17,11 @@ class AnalyticsRelationProvider extends RelationProvider with DataSourceRegister
     if(missing_keys.isEmpty)
       throw AnalyticsRelationProviderOptionMissingException(missing_keys.toSeq)
 
-    AnalyticsRelation(sqlContext)
+    AnalyticsRelation(
+      sqlContext,
+      parseDescriptor(Document.scalaDescriptor),
+      parameters.get("path").get
+    )
   }
 
   override def shortName(): String = "analytics"
