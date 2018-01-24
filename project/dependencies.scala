@@ -74,7 +74,8 @@ object Dependencies {
   val grpc_protobuf = "io.grpc" % "grpc-protobuf" % "1.5.0"
 
   val scala_pb = "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.2"
-  val scala_pb_grpc = "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % com.trueaccord.scalapb.compiler.Version.scalapbVersion
+  val scalapb_grpc = "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % com.trueaccord.scalapb.compiler.Version.scalapbVersion
+  val grpc_netty_scalapb = "io.grpc" % "grpc-netty" % com.trueaccord.scalapb.compiler.Version.grpcJavaVersion
 
   val rxjava2 = "io.reactivex.rxjava2" % "rxjava" % "2.1.5"
   val rxscala = "io.reactivex" % "rxscala_2.11" % "0.26.5"
